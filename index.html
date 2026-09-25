@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
 
-  <script/unpkg.com/@rive-app/canvasscript>
+  <script src=".com/@rive-app/canvasscript>
 
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: #fff;
+      background: white;
     }
 
     canvas {
@@ -27,10 +28,19 @@
 <canvas id="riveCanvas"></canvas>
 
 <script>
-new rive.Rive({
+const riveInstance = new rive.Rive({
   src: "optout.riv",
   canvas: document.getElementById("riveCanvas"),
-  autoplay: true
+
+  artboard: "Opt Out Animation",
+  stateMachines: "State Machine 1",
+
+  autoplay: true,
+
+  onLoad: () => {
+    console.log("Rive loaded");
+    riveInstance.resizeDrawingSurfaceToCanvas();
+  }
 });
 </script>
 
