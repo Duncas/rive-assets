@@ -2,14 +2,42 @@
 <html>
 <head>
   <meta charset="UTF-8">
+
+  <script src=".com/@rive-app/canvasscript>
+
+  <style>
+    html,
+    body,
+    canvas {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1 id="test">Loading...</h1>
+<canvas id="riveCanvas"></canvas>
 
 <script>
-document.getElementById("test").innerHTML =
-  "JavaScript Works";
+console.log("starting");
+
+const canvas =
+  document.getElementById("riveCanvas");
+
+new rive.Rive({
+  src: "optout.riv",
+  canvas: canvas,
+  autoplay: true,
+  stateMachines: "State Machine 1",
+  artboard: "Opt Out Animation",
+
+  onLoad: () => {
+    console.log("loaded");
+  }
+});
 </script>
 
 </body>
