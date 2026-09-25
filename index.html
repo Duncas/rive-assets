@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
 
-  <script src=".com/@rive-app/canvasscript>
+  <script/unpkg.com/@rive-app/canvasscript>
 
   <style>
-    html,
-    body {
+    html, body {
       margin: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
+      background: #fff;
     }
 
     canvas {
       width: 100%;
       height: 100%;
+      display: block;
     }
   </style>
 </head>
@@ -27,7 +28,7 @@
 
 <script>
 new rive.Rive({
-  src: "opt-out-animation.riv",
+  src: "optout.riv",
   canvas: document.getElementById("riveCanvas"),
   autoplay: true
 });
