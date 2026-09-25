@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <script/unpkg.com/@rive-app/canvasscript>
+  <script src="https://unpkg.com/@rive-app/canvas@2"></script>
 
   <style>
     html,
@@ -24,18 +24,16 @@
 <script>
 console.log("starting");
 
-const canvas =
-  document.getElementById("riveCanvas");
+const canvas = document.getElementById("riveCanvas");
 
-new rive.Rive({
+const riveInstance = new rive.Rive({
   src: "test.riv",
   canvas: canvas,
   autoplay: true,
-  stateMachines: "State Machine 1",
-  artboard: "Artboard 1",
 
   onLoad: () => {
     console.log("loaded");
+    riveInstance.resizeDrawingSurfaceToCanvas();
   }
 });
 </script>
